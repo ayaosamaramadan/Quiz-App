@@ -34,10 +34,14 @@ margin-left: 10%;
 list-style-type: circle;
 }
 
-
+.startt strong {
+  color: #ffb01d;
+font-size:1.9rem;
+}
 
 button:hover {
   background-color: #1a5d94;
+
 }
 
 button {

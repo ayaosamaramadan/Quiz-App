@@ -4,11 +4,9 @@ import Header from "./componants/Header.jsx";
 import Loading from "./componants/Loading.jsx";
 import Start from "./componants/Start.jsx";
 import Error from "./componants/Error.jsx";
-import TheQuistions from "./componants/TheQuistions.jsx";
 import Score from "./componants/Score.jsx";
 import Main from "./componants/Main.jsx";
-import Prog from "./componants/Prog.jsx";
-import Footer from "./componants/Footer.jsx";
+import Contant from "./componants/Contant.jsx";
 
 const init = {
   status: "loading",
@@ -88,24 +86,18 @@ export default function App() {
       <Main>
         {status === "loading" && <Loading />}
         {status === "error" && <Error />}
-        {status === "ready" && <Start dispatch={dispatch} queNum={queNum} />}
+        {status === "ready" && (
+          <Start max={max} dispatch={dispatch} queNum={queNum} />
+        )}
         {status === "active" && (
           <>
-            <Prog queNum={queNum} queIndex={queIndex} answer={answer} />
-
-            <TheQuistions
-            queNum={queNum}
-            queIndex={queIndex}
+            <Contant
+              queNum={queNum}
+              queIndex={queIndex}
+              answer={answer}
               question={questions[queIndex]}
               dispatch={dispatch}
-              answer={answer}
-            />
-            <Footer
               sec={sec}
-              answer={answer}
-              queIndex={queIndex}
-              queNum={queNum}
-              dispatch={dispatch}
             />
           </>
         )}
