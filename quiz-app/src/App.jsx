@@ -3,10 +3,12 @@ import "./App.css";
 import Header from "./componants/Header.jsx";
 import Loading from "./componants/Loading.jsx";
 import Start from "./componants/Start.jsx";
-import Error from "./componants/Error.jsx";
+import Err from "./componants/Err.jsx";
 import Score from "./componants/Score.jsx";
 import Main from "./componants/Main.jsx";
 import Contant from "./componants/Contant.jsx";
+
+
 
 const init = {
   status: "loading",
@@ -63,7 +65,7 @@ function reducer(state, action) {
       };
 
     default:
-      throw new Error("error in fetch data");
+      throw Error("error in fetch data");
   }
 }
 export default function App() {
@@ -82,10 +84,11 @@ export default function App() {
   }, []);
   return (
     <>
+
       <Header />
       <Main>
         {status === "loading" && <Loading />}
-        {status === "error" && <Error />}
+        {status === "error" && <Err />}
         {status === "ready" && (
           <Start max={max} dispatch={dispatch} queNum={queNum} />
         )}

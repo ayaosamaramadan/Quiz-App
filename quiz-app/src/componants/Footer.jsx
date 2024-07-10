@@ -7,7 +7,7 @@ export default function Footer({answer , queIndex ,queNum , dispatch , sec}) {
     <>
     <Time dispatch={dispatch} sec={sec}/>
             {answer !== null && queIndex !== queNum - 1 ? (
-              <Next dispatch={dispatch} answer={answer} />
+              <Next dispatch={dispatch}  />
             ) : answer !== null && queIndex === queNum - 1 ? (
               <Finish dispatch={dispatch} />
             ) : null}

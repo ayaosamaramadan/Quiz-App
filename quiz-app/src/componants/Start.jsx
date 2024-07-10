@@ -1,6 +1,6 @@
 
 import "../App.css";
-function Start({ dispatch , queNum ,max, points}) {
+function Start({ dispatch , queNum ,max}) {
   return (
     <>
       <div className="startt">

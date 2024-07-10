@@ -1,4 +1,4 @@
-function Error() {
+function Err() {
   return <p className="err">😔 Somthing wrong </p>;
 }
-export default Error;
+export default Err;
